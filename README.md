@@ -16,3 +16,7 @@ traefik --configfile traefik.yaml
 
 3. curl localhost:8000/whoami
    See request-id header
+
+### Resources
+
+- https://www.youtube.com/watch?v=hCYT1aKJORY
