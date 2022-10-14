@@ -1,0 +1,22 @@
+http:
+  routers:
+    my-router:
+      entryPoints:
+        - http
+      middlewares:
+        - my-request-id
+      service: service-whoami
+      rule: Path(`/whoami`)
+
+  services:
+    service-whoami:
+      loadBalancer:
+        servers:
+          - url: http://localhost:55000
+        passHostHeader: false
+
+  middlewares:
+    my-request-id:
+      plugin:
+        request-id:
+          Header: "X-Request-Id"

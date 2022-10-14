@@ -1,0 +1,18 @@
+api:
+  dashboard: true
+  insecure: true
+
+entryPoints:
+  http:
+    address: ":8000"
+    forwardedHeaders:
+      insecure: true
+
+providers:
+  file:
+    filename: demo.yaml
+
+experimental:
+  localPlugins:
+    request-id:
+      modulename: github.com/michelleN/request-id
